@@ -7,7 +7,6 @@ int ite = iterazioni;
 while (Convert.ToBoolean(iterazioni))
 {
     media += TrovatoreRand(rng.Next(1000));
-    //Console.WriteLine($"Ci ha messo {volte} volte");
     iterazioni--;
 }
 Console.WriteLine($"Ci ha messo mediamente {media/ite} volte.");
@@ -23,6 +22,9 @@ int TrovatoreRand(int num)
     return prove;
 }
 
+
+
+/*
 int TrovatoreAureo(int num)
 {
     int prove = 1;
@@ -37,4 +39,4 @@ int TrovatoreAureo(int num)
         prove++;
     }
     return prove;
-}
+}*/
