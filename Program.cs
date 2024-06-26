@@ -1,4 +1,5 @@
-﻿Console.WriteLine("Che algoritmo vuoi utilizzare?");
+﻿Console.Clear();
+Console.WriteLine("Che algoritmo vuoi utilizzare?");
 Console.WriteLine("1 - Binario; \n2 - Rand");
 int algoritmo = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Quanti numeri?");
