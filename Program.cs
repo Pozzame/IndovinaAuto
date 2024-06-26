@@ -24,19 +24,29 @@ int TrovatoreRand(int num)
 
 
 
-/*
-int TrovatoreAureo(int num)
+
+int TrovatoreBinario(int num, int start, int end)
 {
     int prove = 1;
-    
-    int prova = rng.Next(1000);
-    while(num != prova)
+    int prova = ((end - start) /2) + start;
+    if (num == prova)
+        return prova;
+    else if (num < prova)
+        TrovatoreBinario(num, start, prova);
+    else if (num>prova)
+        TrovatoreBinario(num, prova, end);
+/*    while(num != Binario())
     {
         if (prova < num)
         {
 
         }
         prove++;
-    }
+    }*/
     return prove;
-}*/
+}
+
+int Binario(int inizio, int fine)
+{
+    return ((fine - inizio) /2) + inizio;
+}
