@@ -1,4 +1,6 @@
-﻿Console.Clear();
+﻿using System.ComponentModel;
+
+Console.Clear();
 Console.WriteLine("Che algoritmo vuoi utilizzare?");
 Console.WriteLine("1 - Binario; \n2 - Rand");
 int algoritmo = Convert.ToInt32(Console.ReadLine());
@@ -12,30 +14,39 @@ int media=0;
 int ite = iterazioni;
 while (Convert.ToBoolean(iterazioni))
 {
-    if (algoritmo == 1) media += TrovatoreBinario(rng.Next(max));
-    else if (algoritmo == 2) media += TrovatoreRand(rng.Next(max));
+    if (algoritmo == 1) media += TrovatoreBinario(rng.Next(max), max);
+    else if (algoritmo == 2) media += TrovatoreRand(rng.Next(max), max);
     iterazioni--;
 }
 Console.WriteLine($"Ci ha messo mediamente {media/ite} volte.");
 
-int TrovatoreBinario(int num)
+int TrovatoreBinario(int num, int massimo)
 {
     int prove = 1;
     int min = 0;
     int prova;
     do
     {
-        prova = ((max-min)/2)+min;
-    if (num < prova) max = prova;
+        prova = ((massimo-min)/2)+min;
+        Console.WriteLine("Provo con: " + prova + " ad indovinare: " + num);
+    if (num < prova) massimo = prova;
     else if (num > prova) min = prova;
     prove++;
     } while (prova != num);
-    return prove;
+    Console.WriteLine($"Indovinato con {prove-1}");
+    return prove-1;
 }
 
-int TrovatoreRand(int num)
+int TrovatoreRand(int num, int massimo)
 {
     int prove = 1;
-    while(num != rng.Next(max)) prove++;
-    return prove;
+    int prova;
+    do
+    {
+        prova = rng.Next(massimo);
+        Console.WriteLine("Provo con: " + prova + " ad indovinare: " + num);
+        prove++;
+    }while(num != prova);
+    Console.WriteLine($"Indovinato con {prove-1}");
+    return prove-1;
 }
