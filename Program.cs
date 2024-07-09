@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-
-Console.Clear();
+﻿/*Console.Clear();
 Console.WriteLine("Che algoritmo vuoi utilizzare?");
 Console.WriteLine("1 - Binario; \n2 - Rand");
 int algoritmo = Convert.ToInt32(Console.ReadLine());
@@ -49,4 +47,14 @@ int TrovatoreRand(int num, int massimo)
     }while(num != prova);
     Console.WriteLine($"Indovinato con {prove-1}");
     return prove-1;
-}
+}*/
+using Spectre.Console;
+
+AnsiConsole.WriteLine();
+AnsiConsole.Write(new Calendar(2020, 10)
+        .RoundedBorder()
+        .HighlightStyle(Style.Parse("red"))
+        .HeaderStyle(Style.Parse("yellow"))
+        .AddCalendarEvent("An event", 2020, 9, 22)
+        .AddCalendarEvent("Another event", 2020, 10, 2)
+        .AddCalendarEvent("A third event", 2020, 10, 13));
